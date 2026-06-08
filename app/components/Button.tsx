@@ -23,14 +23,14 @@ export default function Button({
     secondary: `
       bg-[#E5E5E5]
       text-black
-      hover:opacity-80
+      hover:bg-[#ECE122]
     `,
     outline: `
       bg-transparent
       border
       border-black
       text-black
-      hover:bg-black
+      hover:bg-[ECE122]
       hover:text-white
     `,
   };
@@ -41,10 +41,10 @@ export default function Button({
         inline-flex
         items-center
         justify-center
-        h-[62px]
         px-10
-        rounded-[20px]
-        text-sm
+        py-4
+        rounded-[18px]
+        text-text-xl
         font-bold
         transition-all
         duration-200

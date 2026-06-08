@@ -2,7 +2,8 @@ export default function PhoneInput() {
   return (
     <div className="flex flex-col gap-3">
       <label className="text-[14px] font-bold">
-        電話番号<span className="text-red-500">*</span>
+        電話番号
+        {/* <span className="text-red-500">*</span> */}
       </label>
 
       <div className="flex items-center gap-4">

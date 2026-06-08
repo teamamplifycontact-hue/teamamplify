@@ -55,7 +55,7 @@ export default function Input({
           {...(props as InputHTMLAttributes<HTMLInputElement>)}
           className="
             w-full
-            h-[50px]
+            h-[55px]
             rounded-[18px]
             border
             border-[#BDBDBD]

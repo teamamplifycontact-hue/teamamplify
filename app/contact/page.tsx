@@ -19,7 +19,7 @@ export default function Home() {
             <br />
             また、ロゴや選手画像の使用に関しては、ページ下部をご参照下さい。
           </p>
-          <form className="flex flex-col w-full gap-[66px]">
+          <form className="flex flex-col w-full gap-[33px]">
             <Input
               label="法人名・団体名"
               placeholder=""

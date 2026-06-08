@@ -20,19 +20,16 @@ export default function Header() {
               </a>
             </li>
 
-            <li>
-              <Link href="/" className="block">
-                <Image
-                  src="/AMP_logo.png"
-                  alt="Team Amplify"
-                  width={157}
-                  height={36}
-                  priority
-                />
-              </Link>
+            <li className="-translate-x-[12px]">
+              <Image
+                src="/AMP_logo.png"
+                alt="Team Amplify"
+                width={157}
+                height={36}
+              />
             </li>
 
-            <li  className="ml-36 mr-3">
+            <li className="ml-36 mr-3">
               <a href="/about" className="text-base w-[97px] inline-block text-center font-bold">
                 ABOUT
               </a>

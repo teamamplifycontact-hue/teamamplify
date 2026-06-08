@@ -8,7 +8,7 @@ import Button from "../components/Button";
 export default function Home() {
   return (
     <>
-      <div className="flex flex-col flex-1 items-center justify-center ">
+      <div className="flex flex-col flex-1 items-center justify-center w-480">
         <Header />
         <main className="w-full max-w-[1066px] min-h-screen mx-auto flex flex-col pt-[75px] pb-[118px] justify-between bg-white">
           <div className="font-bold text-4xl justify-center flex pb-18">

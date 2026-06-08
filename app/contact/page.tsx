@@ -10,16 +10,16 @@ export default function Home() {
     <>
       <div className="flex flex-col flex-1 items-center justify-center ">
         <Header />
-        <main className="w-full max-w-[1058px] min-h-screen mx-auto flex flex-col pt-[75px] pb-[206px] justify-between bg-white">
-          <div className="font-bold text-4xl justify-center flex pb-[42px]">
+        <main className="w-full max-w-[1066px] min-h-screen mx-auto flex flex-col pt-[75px] pb-[118px] justify-between bg-white">
+          <div className="font-bold text-4xl justify-center flex pb-18">
             CONTACT
           </div>
-          <p className="font-bold text-xl pb-[42px]">
+          <p className="font-bold text-xl pb-18">
             Amplifyならびに所属メンバーへのお問い合わせは、以下のフォームよりお寄せください。
             <br />
             また、ロゴや選手画像の使用に関しては、ページ下部をご参照下さい。
           </p>
-          <form className="flex flex-col w-full gap-[33px]">
+          <form className="flex flex-col w-full gap-[66px]">
             <Input
               label="法人名・団体名"
               placeholder=""
@@ -56,7 +56,7 @@ export default function Home() {
             />
           </form>
 
-          <div className=" flex flex-col items-center gap-[145px] mt-[73px]">
+          <div className=" flex flex-col items-center gap-[66px] mt-[66px]">
             <Button
               variant="secondary"
               className="w-[128px]"

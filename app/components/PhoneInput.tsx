@@ -7,11 +7,11 @@ export default function PhoneInput() {
       </label>
 
       <div className="flex items-center gap-4">
-        <input className="w-[140px] h-[50px] rounded-[18px] border border-[#BDBDBD] px-4" />
+        <input className="w-[140px] h-[33px] rounded-[18px] border border-[#BDBDBD] px-4" />
         <span>-</span>
-        <input className="w-[140px] h-[50px] rounded-[18px] border border-[#BDBDBD] px-4" />
+        <input className="w-[140px] h-[33px] rounded-[18px] border border-[#BDBDBD] px-4" />
         <span>-</span>
-        <input className="w-[140px] h-[50px] rounded-[18px] border border-[#BDBDBD] px-4" />
+        <input className="w-[140px] h-[33px] rounded-[18px] border border-[#BDBDBD] px-4" />
       </div>
     </div>
   );

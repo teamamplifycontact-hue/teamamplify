@@ -39,7 +39,7 @@ export default function Input({
           {...(props as TextareaHTMLAttributes<HTMLTextAreaElement>)}
           className="
             w-full
-            min-h-[120px]
+            min-h-32
             rounded-[18px]
             border
             border-[#BDBDBD]
@@ -55,7 +55,7 @@ export default function Input({
           {...(props as InputHTMLAttributes<HTMLInputElement>)}
           className="
             w-full
-            h-[55px]
+            h-[33px]
             rounded-[18px]
             border
             border-[#BDBDBD]

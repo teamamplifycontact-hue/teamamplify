@@ -2,6 +2,7 @@ import Header from "./components/Header";
 import Footer from "./components/Footer";
 import Input from "./components/Input";
 import PhoneInput from "./components/PhoneInput";
+import Button from "./components/Button";
 
 
 export default function Home() {
@@ -47,6 +48,26 @@ export default function Home() {
               required
             />
           </form>
+          <Button
+            type="submit"
+            variant="primary"
+            className="w-ful"
+          >
+            ボタン
+          </Button>
+          <Button
+            variant="secondary"
+            className="w-full"
+          >
+            ボタン
+          </Button>
+          <Button
+            variant="outline"
+            className="w-full"
+          >
+            ボタン
+          </Button>
+
         </main>
 
       </div>

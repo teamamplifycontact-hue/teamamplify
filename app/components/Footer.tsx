@@ -4,7 +4,7 @@ import Image from "next/image";
 export default function Footer() {
   return (
     <footer className="bg-[#f3f3f3]">
-      <div className="px-[54px] pt-[75px] pb-[50px]">
+      <div className="px-[54px] pt-[85px] pb-[54px]">
         <div className="flex items-start w-full">
 
           {/* 左ブロック */}

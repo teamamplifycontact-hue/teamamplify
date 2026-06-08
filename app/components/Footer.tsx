@@ -4,13 +4,12 @@ import Image from "next/image";
 export default function Footer() {
   return (
     <footer className="bg-[#f3f3f3]">
-      <div className="mx-auto max-w px-[54px] py-[75px] flex flex-col gap-6">
+      <div className="px-[54px] pt-[75px] pb-[50px]">
+        <div className="flex items-start w-full">
 
-
-        {/* ナビ */}
-        <nav>
-          <div className="mb-[21px]">
-            <Link href="/" className="block">
+          {/* 左ブロック */}
+          <div className="w-55">
+            <Link href="/" className="block mb-8">
               <Image
                 src="/AMP_LINE.png"
                 alt="Team Amplify"
@@ -19,64 +18,70 @@ export default function Footer() {
                 priority
               />
             </Link>
-          </div>
-          <div className="flex justify-between w-full">
-            <ul className="flex flex-col text-sm">
 
-              <li>
-                <Link href="/" className="h-10 inline-flex items-center justify-center font-bold">ABOUT</Link>
-              </li>
-              <li>
-                <Link href="/about" className="h-10 inline-flex  items-center justify-center font-bold">NEWS</Link>
-              </li>
-              <li>
-                <Link href="/news" className="h-10 inline-flex  items-center justify-center font-bold">MEMBERS</Link>
-              </li>
-              <li>
-                <Link href="/members" className="h-10 inline-flex  items-center justify-center font-bold">STORE</Link>
-              </li>
+            <ul className="flex flex-col gap-[18px] text-sm font-bold">
+              <li><Link href="/">ABOUT</Link></li>
+              <li><Link href="/about">NEWS</Link></li>
+              <li><Link href="/news">MEMBERS</Link></li>
+              <li><Link href="/members">STORE</Link></li>
             </ul>
-            <ul className="flex flex-col text-sm">
+          </div>
+
+          {/* CONTACT */}
+          <div className="w-60 pt-17">
+            <Link href="/contact" className="text-sm font-bold">
+              CONTACT US
+            </Link>
+          </div>
+
+          {/* ポリシー */}
+          <div className="w-105 pt-17">
+            <ul className="flex flex-col gap-[22px]">
               <li>
-                <Link href="/store" className="h-10 inline-flex items-center justify-center font-bold">CONTACT US</Link>
-              </li>
-            </ul>
-            <ul className="flex flex-col text-sm">
-              <li>
-                <Link href="/store" className="h-10 inline-flex items-center justify-center font-bold">プライバシーポリシー</Link>
-              </li>
-              <li>
-                <Link href="/store" className="h-10 inline-flex items-center justify-center font-bold">ロゴや選手画像の仕様について</Link>
-              </li>
-            </ul>
-            <ul className="flex flex-col text-sm items-end shrink-0">
-              <li>
-                <Link href="/store" className="h-10 inline-flex items-center justify-center text-[12px]">
-                  OFFICIAL SNS ACCOUNT @GgAMPLIFY
+                <Link href="/privacy" className="text-sm font-bold">
+                  プライバシーポリシー
                 </Link>
               </li>
-
-              <li className="flex items-center justify-end h-10">
-                <div className="flex items-center gap-4">
-                  <Link href="/" className="block">
-                    <Image src="/X_logo.png" alt="X" width={16} height={17} />
-                  </Link>
-
-                  <Link href="/" className="block">
-                    <Image src="/youtube_logo.png" alt="YouTube" width={23.75} height={16.67} />
-                  </Link>
-                </div>
-              </li>
-
               <li>
-                <Link href="/store" className="h-10 inline-flex items-center justify-center text-[12px]">
-                  ©︎2026,AMPLIFY Inc.All right reserved.
+                <Link href="/guideline" className="text-sm font-bold">
+                  ロゴや選手画像の仕様について
                 </Link>
               </li>
             </ul>
           </div>
-        </nav>
 
+          {/* SNSエリア */}
+          <div className="ml-auto self-end flex flex-col items-end">
+            <div className="text-[12px]">
+              OFFICIAL SNS ACCOUNT @GgAMPLIFY
+            </div>
+
+            <div className="flex items-center gap-6 mt-[14px]">
+              <Link href="https://x.com/GgAMPLIFY">
+                <Image
+                  src="/X_logo.png"
+                  alt="X"
+                  width={16}
+                  height={17}
+                />
+              </Link>
+
+              <Link href="/">
+                <Image
+                  src="/youtube_logo.png"
+                  alt="YouTube"
+                  width={24}
+                  height={17}
+                />
+              </Link>
+            </div>
+
+            <div className="text-[12px] mt-12">
+              ©2026,AMPLIFY Inc.All right reserved.
+            </div>
+          </div>
+
+        </div>
       </div>
     </footer>
   );

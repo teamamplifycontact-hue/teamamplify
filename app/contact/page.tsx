@@ -9,7 +9,7 @@ import Input from "../components/Input";
 import PhoneInput from "../components/PhoneInput";
 import Button from "../components/Button";
 
-export default function Home() {
+export default function Contact() {
   const router = useRouter();
 
   const [errors, setErrors] = useState<Record<string, string>>({});
@@ -134,11 +134,7 @@ export default function Home() {
             />
 
             <div className="flex justify-center mt-[66px]">
-              <Button
-                type="submit"
-                variant="secondary"
-                className="w-[128px]"
-              >
+              <Button type="submit" variant="secondary" className="w-[128px]">
                 送信
               </Button>
             </div>
@@ -148,7 +144,7 @@ export default function Home() {
             <Button
               variant="secondary"
               className="w-[384px]"
-              onClick={() => router.push("/brand-guideline")}
+              onClick={() => router.push("/brand-guidelines")}
             >
               ロゴや選手画像の使用について
             </Button>

@@ -64,10 +64,9 @@ export default function Contact() {
 
   return (
     <>
-      <div className="flex flex-col flex-1 items-center justify-center w-480">
+      <div className="flex flex-col flex-1 items-center justify-center">
         <Header />
-
-        <main className="w-full max-w-[1066px] min-h-screen mx-auto flex flex-col pt-[75px] pb-[118px] justify-between bg-white">
+        <main className="w-full max-w-[1066px] min-h-screen mx-auto flex flex-col pt-[75px] pb-[118px] justify-between bg-white max-[930px]:px-[69px]">
           <div className="font-bold text-4xl justify-center flex pb-18">
             CONTACT
           </div>

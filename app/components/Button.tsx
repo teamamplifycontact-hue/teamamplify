@@ -47,7 +47,7 @@ export default function Button({
         text-text-xl
         font-bold
         transition-all
-        duration-200
+        duration-500
         disabled:opacity-50
         disabled:cursor-not-allowed
         ${variants[variant]}

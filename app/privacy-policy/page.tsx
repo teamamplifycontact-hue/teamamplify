@@ -12,7 +12,7 @@ export default function PrivacyPolicy() {
       <div className="flex flex-col flex-1 items-center justify-center">
         <Header />
 
-        <main className="w-full max-w-[1066px] mx-auto flex flex-col pt-[75px] pb-[118px] bg-white max-[930px]:px-[69px]">
+        <main className="w-full max-w-[1066px] mx-auto flex flex-col pt-[75px] pb-[118px] bg-white px-[33px] max-[930px]:px-[69px]">
           <div className="font-bold text-4xl justify-center flex pb-[113px]">
             プライバシーポリシー
           </div>

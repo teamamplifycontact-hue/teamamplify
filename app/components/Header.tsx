@@ -11,7 +11,7 @@ export default function Header() {
     <header className="relative w-full">
       <div className="flex h-20 items-center justify-center">
         {/* PC Navigation */}
-        <nav className="max-[930px]:hidden">
+        <nav className="max-[931px]:hidden">
           <ul className="flex items-center justify-between w-full text-sm font-medium">
             <li className="mr-9">
               <Link
@@ -77,7 +77,7 @@ export default function Header() {
           <button
             aria-label="Open menu"
             onClick={() => setIsOpen(true)}
-            className="hidden max-[930px]:flex absolute right-7 top-1/2 -translate-y-1/2 z-50 flex-col gap-[10px]"
+            className="hidden max-[931px]:flex absolute right-7 top-1/2 -translate-y-1/2 z-50 flex-col gap-[10px]"
           >
             <span className="block h-[3px] w-[35px] bg-[#000000]" />
             <span className="block h-[3px] w-[35px] bg-[#000000]" />

@@ -66,7 +66,7 @@ export default function Contact() {
     <>
       <div className="flex flex-col flex-1 items-center justify-center">
         <Header />
-        <main className="w-full max-w-[1066px] min-h-screen mx-auto flex flex-col pt-[75px] pb-[118px] justify-between bg-white px-[33px]  max-[930px]:px-[69px]">
+        <main className="w-full max-w-[1066px] min-h-screen mx-auto flex flex-col pt-[75px] pb-[118px max-[931px]:pb-[90px] justify-between bg-white px-[33px]  max-[931px]:px-[69px]">
           <div className="font-bold text-4xl justify-center flex pb-18">
             CONTACT
           </div>
@@ -122,24 +122,25 @@ export default function Contact() {
             />
 
             <PhoneInput />
+            <div className="flex flex-col">
+              <Input
+                label="お問い合わせ内容"
+                textarea
+                required
+                value={message}
+                onChange={(e) => setMessage(e.target.value)}
+                error={errors.message}
+              />
 
-            <Input
-              label="お問い合わせ内容"
-              textarea
-              required
-              value={message}
-              onChange={(e) => setMessage(e.target.value)}
-              error={errors.message}
-            />
-
-            <div className="flex justify-center mt-[66px]">
-              <Button type="submit" variant="secondary" className="w-[128px]">
-                送信
-              </Button>
+              <div className="flex justify-center mt-[66px] max-[931px]:mt-[72px]">
+                <Button type="submit" variant="secondary" className="w-[128px]">
+                  送信
+                </Button>
+              </div>
             </div>
           </form>
 
-          <div className="flex justify-center mt-[120px]">
+          <div className="flex justify-center mt-[120px] max-[931px]:mt-[62px]">
             <Button
               variant="secondary"
               className="w-[384px]"

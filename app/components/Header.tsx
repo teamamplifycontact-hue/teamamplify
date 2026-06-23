@@ -62,7 +62,7 @@ export default function Header() {
         </nav>
 
         {/* Mobile Logo */}
-        <div className="hidden max-[930px]:block">
+        <div className="hidden max-[931px]:block">
           <Image
             src="/AMP_logo.png"
             alt="Team Amplify"

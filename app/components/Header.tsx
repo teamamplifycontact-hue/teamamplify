@@ -6,56 +6,87 @@ import Image from "next/image";
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
+  const [hover, setHover] = useState(false);
 
   return (
     <header className="relative w-full">
       <div className="flex h-20 items-center justify-center">
         {/* PC Navigation */}
-        <nav className="max-[931px]:hidden">
-          <ul className="flex items-center justify-between w-full text-sm font-medium">
-            <li className="mr-9">
-              <Link
-                href="/"
-                className="inline-block w-[97px] text-center text-base font-bold"
-              >
-                NEWS
+        {/* PC Navigation */}
+        <nav className="max-[931px]:hidden w-full max-w-[1200px] px-6">
+          <ul className="flex items-center justify-between w-full">
+            {/* 左側: メインロゴ */}
+            <li>
+              <Link href="/">
+                <Image
+                  src="/AMP_logo.png"
+                  alt="Team Amplify"
+                  width={157}
+                  height={36}
+                  priority
+                />
               </Link>
             </li>
 
-            <li className="mr-[155px]">
-              <Link
-                href="/members"
-                className="inline-block w-[97px] text-center text-base font-bold"
-              >
-                MEMBERS
-              </Link>
+            {/* 中央: ナビゲーションメニュー */}
+            <li>
+              <ul className="flex items-center gap-12">
+                <li>
+                  <Link
+                    href="/"
+                    className="text-base font-bold tracking-wider hover:opacity-70 transition-opacity"
+                  >
+                    NEWS
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="/members"
+                    className="text-base font-bold tracking-wider hover:opacity-70 transition-opacity"
+                  >
+                    MEMBERS
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="/about"
+                    className="text-base font-bold tracking-wider hover:opacity-70 transition-opacity"
+                  >
+                    ABOUT
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="https://amplify.base.ec/"
+                    className="text-base font-bold tracking-wider hover:opacity-70 transition-opacity"
+                  >
+                    SPONSOR
+                  </Link>
+                </li>
+              </ul>
             </li>
 
-            <li className="-translate-x-[12px]">
-              <Image
-                src="/AMP_logo.png"
-                alt="Team Amplify"
-                width={157}
-                height={36}
-                priority
-              />
-            </li>
-
-            <li className="ml-36 mr-3">
-              <Link
-                href="/about"
-                className="inline-block w-[97px] text-center text-base font-bold"
-              >
-                ABOUT
-              </Link>
-            </li>
-
+            {/* 右側: STOREロゴ */}
             <li>
               <Link
                 href="https://amplify.base.ec/"
-                className="inline-block w-[97px] text-center text-base font-bold"
+                target="_blank"
+                rel="noopener noreferrer"
               >
-                STORE
+                <div
+                  onMouseEnter={() => setHover(true)}
+                  onMouseLeave={() => setHover(false)}
+                >
+                  <Image
+                    src={
+                      hover ? "/Amplify_store_hover.png" : "/Amplify_store_.png"
+                    }
+                    alt="Amplify STORE"
+                    width={180}
+                    height={36}
+                    priority
+                  />
+                </div>
               </Link>
             </li>
           </ul>
@@ -126,7 +157,7 @@ export default function Header() {
           </li>
 
           <li className="mb-[30px] font-bold text-2xl">
-            <Link href="/partners">PARTNERS</Link>
+            <Link href="/partners">SPONSOR</Link>
           </li>
 
           <li className="mb-[30px] font-bold text-2xl">
@@ -137,8 +168,31 @@ export default function Header() {
             <Link href="/privacy">プライバシーポリシー</Link>
           </li>
 
-          <li className="mb-[60px] font-bold text-2xl">
+          <li className="mb-[30px] font-bold text-2xl">
             <Link href="/guideline">ロゴや選手画像の使用について</Link>
+          </li>
+          <li className="mb-[60px]">
+            <Link
+              href="https://amplify.base.ec/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <div
+                className="w-[278px]"
+                onMouseEnter={() => setHover(true)}
+                onMouseLeave={() => setHover(false)}
+              >
+                <Image
+                  src={
+                    hover ? "/Amplify_store_hover.png" : "/Amplify_store_.png"
+                  }
+                  alt="Amplify STORE"
+                  width={278}
+                  height={108}
+                  priority
+                />
+              </div>
+            </Link>
           </li>
 
           {/* SNS */}

@@ -52,7 +52,7 @@ export default function Header() {
 
             <li>
               <Link
-                href="/store"
+                href="https://amplify.base.ec/"
                 className="inline-block w-[97px] text-center text-base font-bold"
               >
                 STORE
@@ -66,68 +66,101 @@ export default function Header() {
           <Image
             src="/AMP_logo.png"
             alt="Team Amplify"
-            width={157}
-            height={36}
+            width={140}
+            height={32}
             priority
           />
         </div>
 
         {/* Hamburger */}
-        <button
-          aria-label={isOpen ? "Close menu" : "Open menu"}
-          onClick={() => setIsOpen(!isOpen)}
-          className="hidden max-[930px]:flex absolute right-7 top-1/2 -translate-y-1/2 z-50 flex-col justify-center gap-[11px]"
-        >
-          <span
-            className={`block h-[3px] w-[35px] bg-black transition-all duration-300 ${
-              isOpen ? "translate-y-[7px] rotate-45" : ""
-            }`}
-          />
-          <span
-            className={`block h-[3px] w-[35px] bg-black transition-all duration-300 ${
-              isOpen ? "-translate-y-[7px] -rotate-45" : ""
-            }`}
-          />
-        </button>
+        {!isOpen && (
+          <button
+            aria-label="Open menu"
+            onClick={() => setIsOpen(true)}
+            className="hidden max-[930px]:flex absolute right-7 top-1/2 -translate-y-1/2 z-50 flex-col gap-[10px]"
+          >
+            <span className="block h-[3px] w-[35px] bg-[#000000]" />
+            <span className="block h-[3px] w-[35px] bg-[#000000]" />
+          </button>
+        )}
       </div>
 
-      {/* Overlay */}
-      <div
-        onClick={() => setIsOpen(false)}
-        className={`fixed inset-0 bg-black/40 z-40 transition-all duration-300 max-[930px]:block ${
-          isOpen ? "visible opacity-100" : "invisible opacity-0"
-        }`}
-      />
-
-      {/* Drawer Menu */}
+      {/* Mobile Menu */}
       <nav
-        className={`fixed top-0 right-0 z-40 h-screen w-[280px] bg-white shadow-xl transition-transform duration-300 ease-in-out max-[930px]:block ${
+        className={`fixed inset-0 z-[999] bg-white transition-transform duration-300 ease-in-out ${
           isOpen ? "translate-x-0" : "translate-x-full"
         }`}
       >
-        <ul className="flex flex-col gap-8 pt-32 px-10 text-2xl font-bold">
-          <li>
-            <Link href="/" onClick={() => setIsOpen(false)}>
-              NEWS
-            </Link>
+        {/* Header */}
+        <div className="relative flex justify-center pt-5">
+          <Image
+            src="/AMP_logo.png"
+            alt="Team Amplify"
+            width={140}
+            height={32}
+            priority
+          />
+
+          <button
+            aria-label="Close menu"
+            onClick={() => setIsOpen(false)}
+            className="absolute right-6 top-6 flex h-8 w-8 items-center justify-center"
+          >
+            <span className="absolute h-[3px] w-[35px] rotate-45 bg-[#000000]" />
+            <span className="absolute h-[3px] w-[35px] -rotate-45 bg-[#000000]" />
+          </button>
+        </div>
+
+        {/* Menu */}
+        <ul className="mt-[41px] px-[70px] flex flex-col">
+          <li className="mb-10 font-bold text-2xl">
+            <Link href="/">NEWS</Link>
           </li>
 
-          <li>
-            <Link href="/members" onClick={() => setIsOpen(false)}>
-              MEMBERS
-            </Link>
+          <li className="mb-[30px] font-bold text-2xl">
+            <Link href="/members">MEMBERS</Link>
           </li>
 
-          <li>
-            <Link href="/about" onClick={() => setIsOpen(false)}>
-              ABOUT
-            </Link>
+          <li className="mb-[30px] font-bold text-2xl">
+            <Link href="/about">ABOUT</Link>
           </li>
 
+          <li className="mb-[30px] font-bold text-2xl">
+            <Link href="/partners">PARTNERS</Link>
+          </li>
+
+          <li className="mb-[30px] font-bold text-2xl">
+            <Link href="/contact">CONTACT US</Link>
+          </li>
+
+          <li className="mb-[30px] font-bold text-2xl">
+            <Link href="/privacy">プライバシーポリシー</Link>
+          </li>
+
+          <li className="mb-[60px] font-bold text-2xl">
+            <Link href="/guideline">ロゴや選手画像の使用について</Link>
+          </li>
+
+          {/* SNS */}
           <li>
-            <Link href="/store" onClick={() => setIsOpen(false)}>
-              STORE
-            </Link>
+            <p className="mb-4 text-[12px] uppercase">
+              OFFICIAL SNS ACCOUNT @GgAMPLIFY
+            </p>
+
+            <div className="flex items-center gap-6">
+              <Link href="https://x.com/GgAMPLIFY" target="_blank">
+                <Image src="/X_logo.png" alt="X" width={18} height={18} />
+              </Link>
+
+              <Link href="https://youtube.com" target="_blank">
+                <Image
+                  src="/youtube_logo.png"
+                  alt="YouTube"
+                  width={24}
+                  height={18}
+                />
+              </Link>
+            </div>
           </li>
         </ul>
       </nav>

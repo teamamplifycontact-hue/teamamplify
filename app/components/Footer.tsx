@@ -29,7 +29,7 @@ export default function Footer() {
                 <Link href="/news">MEMBERS</Link>
               </li>
               <li>
-                <Link href="/members">STORE</Link>
+                <Link href="https://amplify.base.ec/">STORE</Link>
               </li>
             </ul>
           </div>

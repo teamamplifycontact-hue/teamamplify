@@ -12,7 +12,6 @@ export default function Header() {
     <header className="fixed top-0 left-0 z-[1000] w-full bg-white/80">
       <div className="flex h-20 items-center justify-center">
         {/* PC Navigation */}
-        {/* PC Navigation */}
         <nav className="max-[931px]:hidden w-full max-w-[1200px] px-6">
           <ul className="flex items-center justify-between w-full">
             {/* 左側: メインロゴ */}
@@ -118,7 +117,7 @@ export default function Header() {
 
       {/* Mobile Menu */}
       <nav
-        className={`fixed inset-0 z-[999] bg-white transition-transform duration-300 ease-in-out ${
+        className={`fixed inset-0 z-[999] overflow-y-auto bg-white transition-transform duration-300 ease-in-out ${
           isOpen ? "translate-x-0" : "translate-x-full"
         }`}
       >

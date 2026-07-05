@@ -9,9 +9,8 @@ export default function Header() {
   const [hover, setHover] = useState(false);
 
   return (
-    <header className="relative w-full">
+    <header className="fixed top-0 left-0 z-[1000] w-full bg-white/80">
       <div className="flex h-20 items-center justify-center">
-        {/* PC Navigation */}
         {/* PC Navigation */}
         <nav className="max-[931px]:hidden w-full max-w-[1200px] px-6">
           <ul className="flex items-center justify-between w-full">
@@ -34,7 +33,7 @@ export default function Header() {
                 <li>
                   <Link
                     href="/"
-                    className="text-base font-bold tracking-wider hover:opacity-70 transition-opacity"
+                    className="border-b-2 border-transparent hover:border-[#ECE122] transition-all duration-200 text-base font-bold tracking-wider"
                   >
                     NEWS
                   </Link>
@@ -42,7 +41,7 @@ export default function Header() {
                 <li>
                   <Link
                     href="/members"
-                    className="text-base font-bold tracking-wider hover:opacity-70 transition-opacity"
+                    className="border-b-2 border-transparent hover:border-[#ECE122] transition-all duration-200 text-base font-bold tracking-wider"
                   >
                     MEMBERS
                   </Link>
@@ -50,7 +49,7 @@ export default function Header() {
                 <li>
                   <Link
                     href="/about"
-                    className="text-base font-bold tracking-wider hover:opacity-70 transition-opacity"
+                    className="border-b-2 border-transparent hover:border-[#ECE122] transition-all duration-200 text-base font-bold tracking-wider"
                   >
                     ABOUT
                   </Link>
@@ -58,7 +57,7 @@ export default function Header() {
                 <li>
                   <Link
                     href="https://amplify.base.ec/"
-                    className="text-base font-bold tracking-wider hover:opacity-70 transition-opacity"
+                    className="border-b-2 border-transparent hover:border-[#ECE122] transition-all duration-200 text-base font-bold tracking-wider"
                   >
                     SPONSOR
                   </Link>
@@ -118,7 +117,7 @@ export default function Header() {
 
       {/* Mobile Menu */}
       <nav
-        className={`fixed inset-0 z-[999] bg-white transition-transform duration-300 ease-in-out ${
+        className={`fixed inset-0 z-[999] overflow-y-auto bg-white transition-transform duration-300 ease-in-out ${
           isOpen ? "translate-x-0" : "translate-x-full"
         }`}
       >
@@ -145,31 +144,66 @@ export default function Header() {
         {/* Menu */}
         <ul className="mt-[41px] px-[70px] flex flex-col">
           <li className="mb-10 font-bold text-2xl">
-            <Link href="/">NEWS</Link>
+            <Link
+              href="/"
+              className="border-b-2 border-transparent hover:border-[#ECE122] transition-all duration-200"
+            >
+              NEWS
+            </Link>
           </li>
 
           <li className="mb-[30px] font-bold text-2xl">
-            <Link href="/members">MEMBERS</Link>
+            <Link
+              href="/members"
+              className="border-b-2 border-transparent hover:border-[#ECE122] transition-all duration-200"
+            >
+              MEMBERS
+            </Link>
           </li>
 
           <li className="mb-[30px] font-bold text-2xl">
-            <Link href="/about">ABOUT</Link>
+            <Link
+              href="/about"
+              className="border-b-2 border-transparent hover:border-[#ECE122] transition-all duration-200"
+            >
+              ABOUT
+            </Link>
           </li>
 
           <li className="mb-[30px] font-bold text-2xl">
-            <Link href="/partners">SPONSOR</Link>
+            <Link
+              href="/partners"
+              className="border-b-2 border-transparent hover:border-[#ECE122] transition-all duration-200"
+            >
+              SPONSOR
+            </Link>
           </li>
 
           <li className="mb-[30px] font-bold text-2xl">
-            <Link href="/contact">CONTACT US</Link>
+            <Link
+              href="/contact"
+              className="border-b-2 border-transparent hover:border-[#ECE122] transition-all duration-200"
+            >
+              CONTACT US
+            </Link>
           </li>
 
           <li className="mb-[30px] font-bold text-2xl">
-            <Link href="/privacy">プライバシーポリシー</Link>
+            <Link
+              href="/privacy"
+              className="border-b-2 border-transparent hover:border-[#ECE122] transition-all duration-200"
+            >
+              プライバシーポリシー
+            </Link>
           </li>
 
           <li className="mb-[30px] font-bold text-2xl">
-            <Link href="/guideline">ロゴや選手画像の使用について</Link>
+            <Link
+              href="/guideline"
+              className="border-b-2 border-transparent hover:border-[#ECE122] transition-all duration-200"
+            >
+              ロゴや選手画像の使用について
+            </Link>
           </li>
           <li className="mb-[60px]">
             <Link

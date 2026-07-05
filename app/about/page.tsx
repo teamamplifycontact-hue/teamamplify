@@ -97,13 +97,13 @@ export default function About() {
               <h2 className="text-[52px] font-black mb-10">代表</h2>
 
               <div className="flex flex-col md:flex-row gap-10">
-                <Image
-                  src="/member/utsugi.jpg"
-                  alt="宇都木響介"
-                  width={280}
-                  height={340}
-                  className="object-cover"
-                />
+               <Image
+                src="/utsugi.png"
+                alt="宇都木響介"
+                width={280}
+                height={340}
+                className="object-cover"
+               />  
 
                 <div>
                   <p className="text-[16px] font-semibold mb-2">

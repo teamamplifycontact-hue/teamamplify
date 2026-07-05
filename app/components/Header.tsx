@@ -16,7 +16,7 @@ export default function Header() {
           <ul className="flex items-center justify-between w-full">
             {/* 左側: メインロゴ */}
             <li>
-              <Link href="/">
+              <Link href="/top">
                 <Image
                   src="/AMP_logo.png"
                   alt="Team Amplify"

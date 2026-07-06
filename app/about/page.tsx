@@ -11,9 +11,9 @@ export default function About() {
         <Header />
 
         <main className="flex-1 pb-[160px]">
-          <div className="max-w-[1320px] mx-auto">
+          <div className="max-w-[1320px] mx-auto px-6 lg:px-0">
             {/* ロゴ */}
-            <div className="flex justify-center py-[139px]">
+            <div className="flex justify-center py-20 lg:py-[139px]">
               <Image
                 src="/simbolmark_bk.png"
                 alt="Amplify"
@@ -27,7 +27,7 @@ export default function About() {
             <section className="max-w-[900px] mx-auto">
               <h1
                 className="
-                text-[58px]
+                text-[42px] lg:text-[58px]
                 font-black
                 leading-[1.25]
                 tracking-[-0.04em]
@@ -39,7 +39,7 @@ export default function About() {
                 もっと豊かに、もっと熱く。
               </h1>
 
-              <div className="space-y-6 text-[17px] leading-[2]">
+              <div className="space-y-6 text-[16px] lg:text-[17px] leading-[2]">
                 <p>
                   Amplifyは、競技シーンにおける最高峰のパフォーマンスの追求にとどまらず、
                   ライフスタイルや地域コミュニティとの融合を目指す、
@@ -64,7 +64,7 @@ export default function About() {
               </div>
 
               {/* English */}
-              <div className="mt-14 space-y-6 text-[17px] leading-[2] font-semibold">
+              <div className="mt-14 space-y-6 text-[16px] lg:text-[17px] leading-[2] font-semibold">
                 <p>
                   Amplify is a next-generation esports team and lifestyle brand
                   that goes beyond competing at the highest level to weave
@@ -93,16 +93,18 @@ export default function About() {
             </section>
 
             {/* 代表 */}
-            <section className="max-w-[900px] mx-auto mt-40">
-              <h2 className="text-[52px] font-black mb-10">代表</h2>
+            <section className="max-w-[900px] mx-auto mt-24 lg:mt-40">
+              <h2 className="text-[42px] lg:text-[52px] font-black mb-10">
+                代表
+              </h2>
 
-              <div className="flex flex-col md:flex-row gap-10">
+              <div className="flex flex-col lg:flex-row gap-10">
                 <Image
                   src="/utsugi.png"
                   alt="宇都木響介"
-                  width={280}
-                  height={340}
-                  className="object-cover"
+                  width={570}
+                  height={690}
+                  className="w-full lg:w-[280px] object-cover mx-auto"
                 />
 
                 <div>
@@ -110,7 +112,7 @@ export default function About() {
                     Kyosuke Utsugi
                   </p>
 
-                  <h3 className="text-[46px] font-black leading-tight mb-8">
+                  <h3 className="text-[40px] lg:text-[46px] font-black leading-tight mb-8">
                     宇都木 響介
                   </h3>
 

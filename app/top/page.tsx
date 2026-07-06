@@ -1,11 +1,18 @@
-"use client";
-
+import { client } from "../lib/microcms";
+import type { News } from "../types/news";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import Image from "next/image";
 import Link from "next/link";
 
-export default function Home() {
+export default async function Home() {
+  const data = await client.get({
+    endpoint: "news",
+    queries: {
+      limit: 6,
+      orders: "-publishedAt",
+    },
+  });
   return (
     <div className="flex flex-col min-h-screen bg-white">
       <Header />
@@ -117,137 +124,27 @@ export default function Home() {
             </h2>
 
             <div className="grid grid-cols-2 md:grid-cols-3 gap-6 md:gap-x-10 md:gap-y-16">
-              {/* CARD 1 */}
+              {data.contents.map((news: News) => (
+                <Link key={news.id} href={`/news/${news.id}`} className="group">
+                  <div className="overflow-hidden rounded-lg">
+                    <img
+                      src={news.eyecatch.url}
+                      alt={news.title}
+                      className="w-full duration-500 group-hover:scale-105"
+                    />
+                  </div>
 
-              <article className="group cursor-pointer">
-                <div className="overflow-hidden rounded-lg">
-                  <Image
-                    src="/news/news1.jpg"
-                    alt=""
-                    width={410}
-                    height={230}
-                    className="w-full duration-500 group-hover:scale-105"
-                  />
-                </div>
+                  <h3 className="mt-3 md:mt-5 text-[13px] md:text-[18px] font-semibold leading-relaxed">
+                    {news.title}
+                  </h3>
 
-                <h3 className="mt-3 md:mt-5 text-[13px] md:text-[18px] font-semibold leading-relaxed">
-                  ストリーマー部門 新メンバー「neotex」加入のお知らせ
-                </h3>
-
-                <p className="mt-2 md:mt-3 text-[11px] md:text-sm text-neutral-500">
-                  2026.06.03
-                </p>
-              </article>
-
-              {/* CARD 2 */}
-
-              <article className="group cursor-pointer">
-                <div className="overflow-hidden rounded-lg">
-                  <Image
-                    src="/news/news2.jpg"
-                    alt=""
-                    width={410}
-                    height={230}
-                    className="w-full duration-500 group-hover:scale-105"
-                  />
-                </div>
-
-                <h3 className="mt-3 md:mt-5 text-[13px] md:text-[18px] font-semibold leading-relaxed">
-                  VALORANT GC部門設立及び選手加入のお知らせ
-                </h3>
-
-                <p className="mt-2 md:mt-3 text-[11px] md:text-sm text-neutral-500">
-                  2026.06.01
-                </p>
-              </article>
-
-              {/* CARD 3 */}
-
-              <article className="group cursor-pointer">
-                <div className="overflow-hidden rounded-lg">
-                  <Image
-                    src="/news/news3.jpg"
-                    alt=""
-                    width={410}
-                    height={230}
-                    className="w-full duration-500 group-hover:scale-105"
-                  />
-                </div>
-
-                <h3 className="mt-3 md:mt-5 text-[13px] md:text-[18px] font-semibold leading-relaxed">
-                  VALORANT部門 コーチ加入のお知らせ
-                </h3>
-
-                <p className="mt-2 md:mt-3 text-[11px] md:text-sm text-neutral-500">
-                  2026.05.29
-                </p>
-              </article>
-
-              {/* CARD 4 */}
-
-              <article className="group cursor-pointer">
-                <div className="overflow-hidden rounded-lg">
-                  <Image
-                    src="/news/news4.jpg"
-                    alt=""
-                    width={410}
-                    height={230}
-                    className="w-full duration-500 group-hover:scale-105"
-                  />
-                </div>
-
-                <h3 className="mt-3 md:mt-5 text-[13px] md:text-[18px] font-semibold leading-relaxed">
-                  eスポーツチーム「Amplify」始動のお知らせ
-                </h3>
-
-                <p className="mt-2 md:mt-3 text-[11px] md:text-sm text-neutral-500">
-                  2026.05.01
-                </p>
-              </article>
-
-              {/* CARD 5 */}
-
-              <article className="group cursor-pointer">
-                <div className="overflow-hidden rounded-lg">
-                  <Image
-                    src="/news/news5.jpg"
-                    alt=""
-                    width={410}
-                    height={230}
-                    className="w-full duration-500 group-hover:scale-105"
-                  />
-                </div>
-
-                <h3 className="mt-3 md:mt-5 text-[13px] md:text-[18px] font-semibold leading-relaxed">
-                  VALORANT GC部門設立及び選手加入のお知らせ
-                </h3>
-
-                <p className="mt-2 md:mt-3 text-[11px] md:text-sm text-neutral-500">
-                  2026.06.01
-                </p>
-              </article>
-
-              {/* CARD 6 */}
-
-              <article className="group cursor-pointer">
-                <div className="overflow-hidden rounded-lg">
-                  <Image
-                    src="/news/news6.jpg"
-                    alt=""
-                    width={410}
-                    height={230}
-                    className="w-full duration-500 group-hover:scale-105"
-                  />
-                </div>
-
-                <h3 className="mt-3 md:mt-5 text-[13px] md:text-[18px] font-semibold leading-relaxed">
-                  VALORANT部門 コーチ加入のお知らせ
-                </h3>
-
-                <p className="mt-2 md:mt-3 text-[11px] md:text-sm text-neutral-500">
-                  2026.05.29
-                </p>
-              </article>
+                  <p className="mt-2 md:mt-3 text-[11px] md:text-sm text-neutral-500">
+                    {new Date(news.publishedAt)
+                      .toLocaleDateString("ja-JP")
+                      .replace(/\//g, ".")}
+                  </p>
+                </Link>
+              ))}
             </div>
           </div>
         </section>

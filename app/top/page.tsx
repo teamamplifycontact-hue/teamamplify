@@ -22,21 +22,27 @@ export default async function Home() {
             HERO
         ========================= */}
 
-        <section>
+        <section className="relative h-[809px] overflow-hidden bg-[#c6ad00]">
+          {/* 選手 */}
           <Image
-            src="/topimage.png"
-            alt="Amplify"
-            width={1920}
-            height={1080}
+            src="/hero_players3.png"
+            alt=""
+            fill
+            className="object-cover object-[center_20%]"
             priority
-            className="
-              w-full
-              h-auto
-              object-cover
-              md:h-auto
-              h-[520px]
-            "
           />
+
+          {/* ロゴ */}
+          <div className="absolute inset-0 flex items-center justify-center">
+            <Image
+              src="/hero_logo.png"
+              alt="Amplify"
+              width={420}
+              height={120}
+              className="hero-logo"
+              priority
+            />
+          </div>
         </section>
 
         {/* =========================

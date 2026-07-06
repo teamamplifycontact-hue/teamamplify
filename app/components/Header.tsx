@@ -56,7 +56,7 @@ export default function Header() {
                 </li>
                 <li>
                   <Link
-                    href="https://amplify.base.ec/"
+                    href="/sponsor"
                     className="border-b-2 border-transparent hover:border-[#ECE122] transition-all duration-200 text-base font-bold tracking-wider"
                   >
                     SPONSOR
@@ -176,7 +176,7 @@ export default function Header() {
 
           <li className="mb-[30px] font-bold text-2xl">
             <Link
-              href="/partners"
+              href="/sponsor"
               className="border-b-2 border-transparent hover:border-[#ECE122] transition-all duration-200"
             >
               SPONSOR

@@ -9,8 +9,8 @@ const notoSansJP = Noto_Sans_JP({
 });
 
 export const metadata: Metadata = {
-  title: "Corporate Site",
-  description: "Corporate Site",
+  title: "TeamAmplify",
+  description: "TeamAmplify",
 };
 
 export default function RootLayout({

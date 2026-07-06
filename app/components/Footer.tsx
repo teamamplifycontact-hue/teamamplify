@@ -26,7 +26,7 @@ export default function Footer() {
                 </li>
 
                 <li>
-                  <Link href="/">NEWS</Link>
+                  <Link href="/news">NEWS</Link>
                 </li>
 
                 <li>
@@ -112,7 +112,7 @@ export default function Footer() {
             </li>
 
             <li>
-              <Link href="/">NEWS</Link>
+              <Link href="/news">NEWS</Link>
             </li>
 
             <li>

@@ -32,7 +32,7 @@ export default function Header() {
               <ul className="flex items-center gap-12">
                 <li>
                   <Link
-                    href="/"
+                    href="/news"
                     className="border-b-2 border-transparent hover:border-[#ECE122] transition-all duration-200 text-base font-bold tracking-wider"
                   >
                     NEWS
@@ -149,7 +149,7 @@ export default function Header() {
         <ul className="mt-[41px] px-[70px] flex flex-col">
           <li className="mb-10 font-bold text-2xl">
             <Link
-              href="/"
+              href="/news"
               className="border-b-2 border-transparent hover:border-[#ECE122] transition-all duration-200"
             >
               NEWS

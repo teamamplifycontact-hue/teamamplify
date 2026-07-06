@@ -63,12 +63,16 @@ export default function Home() {
               className="mx-auto mb-10"
             />
 
-            <h2 className="text-[34px] md:text-[72px] font-black tracking-[-0.04em] leading-tight">
+            <h2 className="text-[34px] md:text-[56px] xl:text-[65px] font-black tracking-[-0.001em] leading-tight">
               <span className="font-black">AMPLIFY</span>
 
               <span className="font-light"> CULTURE.</span>
 
-              <span className="font-black"> AMPLIFY</span>
+              <br className="block md:hidden" />
+
+              <span className="hidden md:inline"> </span>
+
+              <span className="font-black">AMPLIFY</span>
 
               <span className="font-light"> PASSION.</span>
             </h2>
@@ -264,10 +268,14 @@ export default function Home() {
                 </h2>
               </div>
 
-              <button
+              <Link
+                href="https://amplify.base.ec"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="
-                w-full
-                md:w-auto
+                inline-flex
+                items-center
+                justify-center
                 h-[52px]
                 px-8
                 rounded-full
@@ -280,7 +288,7 @@ export default function Home() {
               "
               >
                 VIEW ALL
-              </button>
+              </Link>
             </div>
 
             <div className="group overflow-hidden rounded-[16px] md:rounded-[24px] cursor-pointer">

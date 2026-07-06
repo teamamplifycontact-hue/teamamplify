@@ -16,7 +16,7 @@ export default function Header() {
           <ul className="flex items-center justify-between w-full">
             {/* 左側: メインロゴ */}
             <li>
-              <Link href="/">
+              <Link href="/top">
                 <Image
                   src="/AMP_logo.png"
                   alt="Team Amplify"
@@ -93,13 +93,15 @@ export default function Header() {
 
         {/* Mobile Logo */}
         <div className="hidden max-[931px]:block">
-          <Image
-            src="/AMP_logo.png"
-            alt="Team Amplify"
-            width={140}
-            height={32}
-            priority
-          />
+          <Link href="/top">
+            <Image
+              src="/AMP_logo.png"
+              alt="Team Amplify"
+              width={140}
+              height={32}
+              priority
+            />
+          </Link>
         </div>
 
         {/* Hamburger */}
@@ -123,13 +125,15 @@ export default function Header() {
       >
         {/* Header */}
         <div className="relative flex justify-center pt-5">
-          <Image
-            src="/AMP_logo.png"
-            alt="Team Amplify"
-            width={140}
-            height={32}
-            priority
-          />
+          <Link href="/top">
+            <Image
+              src="/AMP_logo.png"
+              alt="Team Amplify"
+              width={140}
+              height={32}
+              priority
+            />
+          </Link>
 
           <button
             aria-label="Close menu"

@@ -38,7 +38,7 @@ const members = [
   },
   {
     name: "tori",
-    image: "/member_default.png",
+    image: "/member_tori.png",
     category: "VALORANT",
   },
   {

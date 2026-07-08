@@ -61,10 +61,6 @@ export default async function MemberPage({ params }: Props) {
                 </p>
               )}
 
-              <p className="mt-8 text-[18px] leading-8 text-neutral-600 max-w-[700px]">
-                {member.description}
-              </p>
-
               {/* SNS */}
 
               <div className="flex gap-5 mt-10">

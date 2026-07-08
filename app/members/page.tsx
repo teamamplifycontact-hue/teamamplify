@@ -126,15 +126,34 @@ export default function Members() {
         </section>
 
         {/* MEMBER GRID */}
-        <section className="max-w-[1320px] mx-auto px-6 mt-20">
-          <div className="grid grid-cols-3 min-[960px]:grid-cols-4 min-[1280px]:grid-cols-5 gap-[25px] justify-items-center">
+        <section className="max-w-[1320px] mx-auto px-4 sm:px-6 mt-20">
+          <div
+            className="
+    grid
+    grid-cols-2
+    sm:grid-cols-3
+    md:grid-cols-4
+    xl:grid-cols-5
+    gap-6
+    justify-items-center
+  "
+          >
             {filteredMembers.map((member) => (
               <Link
                 key={member.slug}
                 href={`/members/${member.slug}`}
-                className="flex flex-col items-center group cursor-pointer"
+                className="flex flex-col items-center w-full max-w-[170px] group"
               >
-                <div className="relative w-[170px] h-[170px] mx-auto rounded-[28px] overflow-hidden bg-neutral-100">
+                <div
+                  className="
+          relative
+          w-full
+          aspect-square
+          rounded-[28px]
+          overflow-hidden
+          bg-neutral-100
+        "
+                >
                   <Image
                     src={member.image}
                     alt={member.name}
@@ -143,7 +162,9 @@ export default function Members() {
                   />
                 </div>
 
-                <p className="mt-5 text-[24px] font-black">{member.name}</p>
+                <p className="mt-4 text-lg sm:text-xl lg:text-2xl font-black text-center">
+                  {member.name}
+                </p>
               </Link>
             ))}
           </div>

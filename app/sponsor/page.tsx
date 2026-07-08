@@ -208,7 +208,7 @@ hover:-translate-y-1
                 <p className="text-neutral-500">#Members</p>
 
                 <h3 className="text-[60px] md:text-[90px] font-black mt-4">
-                  20+
+                  25+
                 </h3>
 
                 <p className="mt-4 text-lg">Players / Streamers / Staff</p>
@@ -230,7 +230,7 @@ hover:-translate-y-1
                 <p className="text-neutral-500">#Partners</p>
 
                 <h3 className="text-[60px] md:text-[90px] font-black mt-4">
-                  3+
+                  1+
                 </h3>
 
                 <p className="mt-4 text-lg">Official Partners</p>
@@ -259,25 +259,25 @@ hover:-translate-y-1
               {[
                 "/AEL.png",
                 "/ekatsu_logo_simple_black_1 1.png",
-                "/partner/partner3.png",
-                "/partner/partner4.png",
-                "/partner/partner5.png",
-                "/partner/partner6.png",
+                // "/partner/partner3.png",
+                // "/partner/partner4.png",
+                // "/partner/partner5.png",
+                // "/partner/partner6.png",
               ].map((logo, index) => (
                 <div
                   key={index}
                   className="
-            bg-white
-            rounded-[16px] md:rounded-[24px]
-            h-[120px] md:h-[180px]
-            flex
-            items-center
-            justify-center
-            border
-            border-neutral-200
-            hover:shadow-lg
-            duration-300
-          "
+                  bg-white
+                  rounded-[16px] md:rounded-[24px]
+                  h-[120px] md:h-[180px]
+                  flex
+                  items-center
+                  justify-center
+                  border
+                  border-neutral-200
+                  hover:shadow-lg
+                  duration-300
+                "
                 >
                   <Image
                     src={logo}

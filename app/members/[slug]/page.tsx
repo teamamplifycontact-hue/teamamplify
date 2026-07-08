@@ -30,7 +30,7 @@ export default async function MemberPage({ params }: Props) {
 
       <main className="pt-[170px] pb-[120px]">
         <section className="max-w-[1320px] mx-auto px-6">
-          <div className="grid lg:grid-cols-[350px_1fr] gap-[50px] items-start">
+          <div className="grid lg:grid-cols-[350px_1fr] gap-[50px] items-center">
             {/* LEFT */}
 
             <div>

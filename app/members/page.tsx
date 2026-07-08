@@ -146,13 +146,13 @@ export default function Members() {
               >
                 <div
                   className="
-          relative
-          w-full
-          aspect-square
-          rounded-[28px]
-          overflow-hidden
-          bg-neutral-100
-        "
+                  relative
+                  w-full
+                  aspect-square
+                  rounded-[28px]
+                  overflow-hidden
+                  bg-neutral-100
+                "
                 >
                   <Image
                     src={member.image}

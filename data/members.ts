@@ -6,6 +6,14 @@ export const members = [
     name: "トマケチャ",
     image: "/members_tomakecha.jpg",
     category: "CREATOR",
+    description:
+    "22歳｜FPS（VALORANTなど）とラップが好き。卵・小麦・そば・ナッツアレルギー",
+    x: "https://x.com/tomakecha2",
+    achievements: [
+      // "",
+      // "",
+      // "",
+    ],
   },
   {
     slug: "foxx",
@@ -13,9 +21,7 @@ export const members = [
     birthday: "2007.08.11",
     image: "/member_default.png",
     category: "VALORANT",
-    description:
-      "ブラジル生まれの背景を持ち、豊かな感性と確かな実力を兼ね備えた期待のプレイヤー。チームへの愛着が非常に強く、メンバーとの確固たる信頼関係（ブラザーフッド）を何よりも大切にしています。その強い結束力から生まれる高い連携力と、周囲の環境に柔軟に適応していく吸収力を武器に、日々進化を続けているのが彼の最大の強みです。コミュニティとともに歩み、チームの勝利のために実直に高みを目指し続ける、将来性あふれる大注目のプレイヤーです。",
-
+    description:"ブラジル生まれの背景を持ち、豊かな感性と確かな実力を兼ね備えた期待のプレイヤー。チームへの愛着が非常に強く、メンバーとの確固たる信頼関係（ブラザーフッド）を何よりも大切にしています。その強い結束力から生まれる高い連携力と、周囲の環境に柔軟に適応していく吸収力を武器に、日々進化を続けているのが彼の最大の強みです。コミュニティとともに歩み、チームの勝利のために実直に高みを目指し続ける、将来性あふれる大注目のプレイヤーです。",
     x: "https://x.com/FoxxFPS_",
     twitch: "https://www.twitch.tv/foxxfps_",
     achievements: [
@@ -43,7 +49,6 @@ export const members = [
     team: "Amplify",
     description:
       "Amplifyの看板ストリーマーとして、配信やコンテンツ制作を通じてチームの魅力を発信。視聴者との交流を大切にしながら、コミュニティを盛り上げる存在です。",
-
     x: "https://x.com/IE7oW5o5gI7875",
     youtube: "https://youtube.com/@ggamplify?si=DjcHypnsEeurYyVk",
     achievements: [
@@ -55,8 +60,12 @@ export const members = [
   {
     slug: "larme",
     name: "Larme",
-    image: "/member_larme.png",
+     birthday: "2003.10.26",
+    image: "/member_larme2.png",
     category: "STAFF",
+    description:
+      "Amplifyのストリーマー部門専属スタッフ。自慢の筋肉で世界を支えていきます。柔道が特にすごい。",
+      x: "https://x.com/Larme_era?s=20",
   },
   {
     slug: "muchikin",
@@ -173,54 +182,68 @@ export const members = [
     name: "がくさい",
     image: "/member_gakusai.png",
     category: "VALORANT ACADEMY",
+    description:"",
   },
   {
     slug: "pixie",
     name: "pixie",
+    birthday: "2006.10.20",
     image: "/member_default.png",
     category: "VALORANT ACADEMY",
+    description:"",
   },
   {
     slug: "daichi",
     name: "だいち",
     image: "/member_default.png",
     category: "VALORANT ACADEMY",
+    description:"",
   },
   {
     slug: "nakota",
     name: "なこた。",
     image: "/member_default.png",
     category: "VALORANT ACADEMY",
+    description:"",
   },
   {
     slug: "neo",
     name: "ねお",
     image: "/member_default.png",
     category: "VALORANT ACADEMY",
+    description:"",
   },
   {
     slug: "hammer-kammer",
     name: "ハンマーカンマー",
+    birthday: "2009.03.17",
     image: "/member_default.png",
     category: "VALORANT ACADEMY",
+    description:"HIPHOPのビートのように、鋭く、タフに、自分のスタイル（swag）をプレイで証明する。好きなもの：VALORANT / HIPHOP / 海外サッカークールなクリップと、熱いパッションをタイムラインに。",
+    achievements: [
+      "STAGE:0 2026 VALORANT部門 出場 ",
+    ],
   },
   {
     slug: "sorasharo",
     name: "そらしゃろ",
     image: "/member_default.png",
     category: "VALORANT GC",
+    description:"",
   },
   {
     slug: "xsi",
     name: "Xsi",
     image: "/member_default.png",
     category: "VALORANT GC",
+    description:"",
   },
   {
     slug: "moechan",
     name: "もえちゃん",
     image: "/member_default.png",
     category: "VALORANT GC",
+    description:"",
   },
   {
     slug: "watajam",
@@ -246,5 +269,6 @@ export const members = [
     name: "azin",
     image: "/member_default.png",
     category: "STAFF",
+    description:"",
   },
 ];

@@ -7,7 +7,7 @@ export const members = [
     image: "/members_tomakecha.jpg",
     category: "CREATOR",
     description:
-    "22歳｜FPS（VALORANTなど）とラップが好き。卵・小麦・そば・ナッツアレルギー",
+      "22歳｜FPS（VALORANTなど）とラップが好き。卵・小麦・そば・ナッツアレルギー",
     x: "https://x.com/tomakecha2",
     achievements: [
       // "",
@@ -21,7 +21,8 @@ export const members = [
     birthday: "2007.08.11",
     image: "/member_default.png",
     category: "VALORANT",
-    description:"ブラジル生まれの背景を持ち、豊かな感性と確かな実力を兼ね備えた期待のプレイヤー。チームへの愛着が非常に強く、メンバーとの確固たる信頼関係（ブラザーフッド）を何よりも大切にしています。その強い結束力から生まれる高い連携力と、周囲の環境に柔軟に適応していく吸収力を武器に、日々進化を続けているのが彼の最大の強みです。コミュニティとともに歩み、チームの勝利のために実直に高みを目指し続ける、将来性あふれる大注目のプレイヤーです。",
+    description:
+      "ブラジル生まれの背景を持ち、豊かな感性と確かな実力を兼ね備えた期待のプレイヤー。チームへの愛着が非常に強く、メンバーとの確固たる信頼関係（ブラザーフッド）を何よりも大切にしています。その強い結束力から生まれる高い連携力と、周囲の環境に柔軟に適応していく吸収力を武器に、日々進化を続けているのが彼の最大の強みです。コミュニティとともに歩み、チームの勝利のために実直に高みを目指し続ける、将来性あふれる大注目のプレイヤーです。",
     x: "https://x.com/FoxxFPS_",
     twitch: "https://www.twitch.tv/foxxfps_",
     achievements: [
@@ -60,12 +61,12 @@ export const members = [
   {
     slug: "larme",
     name: "Larme",
-     birthday: "2003.10.26",
+    birthday: "2003.10.26",
     image: "/member_larme2.png",
     category: "STAFF",
     description:
       "Amplifyのストリーマー部門専属スタッフ。自慢の筋肉で世界を支えていきます。柔道が特にすごい。",
-      x: "https://x.com/Larme_era?s=20",
+    x: "https://x.com/Larme_era?s=20",
   },
   {
     slug: "muchikin",
@@ -138,7 +139,7 @@ export const members = [
   {
     slug: "magano",
     name: "蛇灰華まがの",
-    birthday: "07.21",
+    birthday: "1999.07.21",
     image: "/member_magano.png",
     category: "STREAMER",
     description:
@@ -146,6 +147,12 @@ export const members = [
     x: "https://x.com/uilow3?s=20",
     youtube: "https://www.youtube.com/channel/UCoLiC0QOZta5fX4uJNjU7ww",
     twitch: "https://www.twitch.tv/jahakamagano46",
+    achievements: [
+      "2023年7月 蛇灰華まがの生誕カスタム(apex)開催",
+      "2024年4月 蛇灰華組総会(VALORANT)開催",
+      "2024年10月 第8回One coin cup 出場",
+      "2024年12月 JAPANNEXT CUP 出場",
+    ],
   },
   {
     slug: "amagami-noa",
@@ -182,7 +189,7 @@ export const members = [
     name: "がくさい",
     image: "/member_gakusai.png",
     category: "VALORANT ACADEMY",
-    description:"",
+    description: "",
   },
   {
     slug: "pixie",
@@ -190,28 +197,28 @@ export const members = [
     birthday: "2006.10.20",
     image: "/member_default.png",
     category: "VALORANT ACADEMY",
-    description:"",
+    description: "",
   },
   {
     slug: "daichi",
     name: "だいち",
     image: "/member_default.png",
     category: "VALORANT ACADEMY",
-    description:"",
+    description: "",
   },
   {
     slug: "nakota",
     name: "なこた。",
     image: "/member_default.png",
     category: "VALORANT ACADEMY",
-    description:"",
+    description: "",
   },
   {
     slug: "neo",
     name: "ねお",
     image: "/member_default.png",
     category: "VALORANT ACADEMY",
-    description:"",
+    description: "",
   },
   {
     slug: "hammer-kammer",
@@ -219,31 +226,30 @@ export const members = [
     birthday: "2009.03.17",
     image: "/member_default.png",
     category: "VALORANT ACADEMY",
-    description:"HIPHOPのビートのように、鋭く、タフに、自分のスタイル（swag）をプレイで証明する。好きなもの：VALORANT / HIPHOP / 海外サッカークールなクリップと、熱いパッションをタイムラインに。",
-    achievements: [
-      "STAGE:0 2026 VALORANT部門 出場 ",
-    ],
+    description:
+      "HIPHOPのビートのように、鋭く、タフに、自分のスタイル（swag）をプレイで証明する。好きなもの：VALORANT / HIPHOP / 海外サッカークールなクリップと、熱いパッションをタイムラインに。",
+    achievements: ["STAGE:0 2026 VALORANT部門 出場 "],
   },
   {
     slug: "sorasharo",
     name: "そらしゃろ",
     image: "/member_default.png",
     category: "VALORANT GC",
-    description:"",
+    description: "",
   },
   {
     slug: "xsi",
     name: "Xsi",
     image: "/member_default.png",
     category: "VALORANT GC",
-    description:"",
+    description: "",
   },
   {
     slug: "moechan",
     name: "もえちゃん",
     image: "/member_default.png",
     category: "VALORANT GC",
-    description:"",
+    description: "",
   },
   {
     slug: "watajam",
@@ -269,6 +275,6 @@ export const members = [
     name: "azin",
     image: "/member_default.png",
     category: "STAFF",
-    description:"",
+    description: "",
   },
 ];

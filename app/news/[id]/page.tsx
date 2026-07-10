@@ -22,7 +22,6 @@ export default async function NewsDetail({ params }: Props) {
 
       <main
         className="
-        max-w-[1066px] 
         w-full
         mx-auto
         pt-[111px]
@@ -37,14 +36,16 @@ export default async function NewsDetail({ params }: Props) {
           src={news.eyecatch.url}
           alt={news.title}
           className="
-          w-full
+          max-w-[1667px]
+                  w-full
           object-cover
         "
         />
 
         {/* タイトル */}
-        <h1
-          className="
+        <div className=" max-w-[1066px] mx-auto">
+          <h1
+            className="
           mt-24
           text-[48px]
           font-bold
@@ -52,20 +53,21 @@ export default async function NewsDetail({ params }: Props) {
           max-[931px]:mt-12
           max-[931px]:text-[28px]
         "
-        >
-          {news.title}
-        </h1>
+          >
+            {news.title}
+          </h1>
 
-        {/* 本文 */}
-        <div
-          className="
+          {/* 本文 */}
+          <div
+            className="
           news-content
           mt-[54px]
         "
-          dangerouslySetInnerHTML={{
-            __html: news.content,
-          }}
-        />
+            dangerouslySetInnerHTML={{
+              __html: news.content,
+            }}
+          />
+        </div>
       </main>
 
       <Footer />

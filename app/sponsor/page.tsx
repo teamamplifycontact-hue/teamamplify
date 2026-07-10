@@ -312,7 +312,9 @@ hover:-translate-y-1
 
           {/* Contents */}
           <div className="relative z-10 max-w-[900px] mx-auto text-center px-6">
-            <h2 className="text-[56px] font-black">Let's Build Together.</h2>
+            <h2 className="text-[56px] font-black">
+              Let&apos;s Build Together.
+            </h2>
 
             <p className="mt-8 leading-8 text-white/80">
               Amplifyではスポンサー企業様を募集しています。

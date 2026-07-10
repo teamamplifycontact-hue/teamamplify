@@ -20,22 +20,48 @@ export default async function NewsDetail({ params }: Props) {
     <div className="min-h-screen flex flex-col bg-white">
       <Header />
 
-      <main className="max-w-[1150px] w-full mx-auto pt-[60px] pb-[140px]">
+      <main
+        className="
+        max-w-[1066px] 
+        w-full
+        mx-auto
+        pt-[111px]
+        pb-[140px]
+        px-6
+
+        max-[931px]:px-4
+      "
+      >
         {/* アイキャッチ */}
         <img
           src={news.eyecatch.url}
           alt={news.title}
-          className="w-full rounded-sm object-cover"
+          className="
+          w-full
+          object-cover
+        "
         />
 
         {/* タイトル */}
-        <h1 className="mt-[72px] text-[48px] font-bold leading-tight">
+        <h1
+          className="
+          mt-24
+          text-[48px]
+          font-bold
+          leading-tight
+          max-[931px]:mt-12
+          max-[931px]:text-[28px]
+        "
+        >
           {news.title}
         </h1>
 
         {/* 本文 */}
         <div
-          className="news-content mt-[60px]"
+          className="
+          news-content
+          mt-[54px]
+        "
           dangerouslySetInnerHTML={{
             __html: news.content,
           }}

@@ -17,8 +17,8 @@ export default function About() {
               <Image
                 src="/simbolmark_bk.png"
                 alt="Amplify"
-                width={104}
-                height={104}
+                width={90}
+                height={90}
                 priority
               />
             </div>

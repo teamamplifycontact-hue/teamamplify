@@ -1,20 +1,42 @@
-"use client";
-
 import Link from "next/link";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import Image from "next/image";
-import { useState } from "react";
-import { members } from "@/data/members";
+import { client } from "../lib/microcms";
+import type { Member } from "../types/member";
 
-export default function Members() {
-  const [activeCategory, setActiveCategory] = useState("ALL");
+type Props = {
+  searchParams: Promise<{
+    category?: string;
+  }>;
+};
 
-  const filteredMembers = (
-    activeCategory === "ALL"
-      ? members
-      : members.filter((member) => member.category === activeCategory)
-  ).sort((a, b) => a.name.localeCompare(b.name, "ja"));
+export default async function Members({ searchParams }: Props) {
+  const { category } = await searchParams;
+
+  const data = await client.get({
+    endpoint: "members",
+    queries: {
+      orders: "name",
+      ...(category && category !== "ALL"
+        ? {
+            filters: `category[equals]${category}`,
+          }
+        : {}),
+    },
+  });
+
+  const categories = [
+    { label: "ALL", slug: "" },
+    { label: "APEX LEGENDS", slug: "APEX" },
+    { label: "STREET FIGHTER", slug: "STREET FIGHTER" },
+    { label: "STREAMER", slug: "STREAMER" },
+    { label: "VALORANT", slug: "VALORANT" },
+    { label: "VALORANT ACADEMY", slug: "VALORANT ACADEMY" },
+    { label: "VALORANT GC", slug: "VALORANT GC" },
+    { label: "STAFF", slug: "STAFF" },
+    { label: "CREATOR", slug: "CREATOR" },
+  ];
 
   return (
     <div className="bg-white min-h-screen">
@@ -24,138 +46,34 @@ export default function Members() {
         {/* CATEGORY */}
         <section className="max-w-[1320px] mx-auto px-6">
           <div className="flex flex-wrap justify-center gap-4">
-            <button
-              onClick={() => setActiveCategory("ALL")}
-              className={`px-7 h-[46px] rounded-full font-bold text-[14px] duration-300 ${
-                activeCategory === "ALL"
-                  ? "bg-[#D9B600] text-black"
-                  : "bg-neutral-200 hover:bg-[#D9B600]"
-              }`}
-            >
-              ALL
-            </button>
-
-            <button
-              onClick={() => setActiveCategory("APEX")}
-              className={`px-7 h-[46px] rounded-full font-bold text-[14px] duration-300 ${
-                activeCategory === "APEX"
-                  ? "bg-[#D9B600] text-black"
-                  : "bg-neutral-200 hover:bg-[#D9B600]"
-              }`}
-            >
-              APEX LEGENDS
-            </button>
-
-            <button
-              onClick={() => setActiveCategory("STREET FIGHTER")}
-              className={`px-7 h-[46px] rounded-full font-bold text-[14px] duration-300 ${
-                activeCategory === "STREET FIGHTER"
-                  ? "bg-[#D9B600] text-black"
-                  : "bg-neutral-200 hover:bg-[#D9B600]"
-              }`}
-            >
-              STREET FIGHTER
-            </button>
-
-            <button
-              onClick={() => setActiveCategory("STREAMER")}
-              className={`px-7 h-[46px] rounded-full font-bold text-[14px] duration-300 ${
-                activeCategory === "STREAMER"
-                  ? "bg-[#D9B600] text-black"
-                  : "bg-neutral-200 hover:bg-[#D9B600]"
-              }`}
-            >
-              STREAMER
-            </button>
-
-            <button
-              onClick={() => setActiveCategory("VALORANT")}
-              className={`px-7 h-[46px] rounded-full font-bold text-[14px] duration-300 ${
-                activeCategory === "VALORANT"
-                  ? "bg-[#D9B600] text-black"
-                  : "bg-neutral-200 hover:bg-[#D9B600]"
-              }`}
-            >
-              VALORANT
-            </button>
-
-            <button
-              onClick={() => setActiveCategory("VALORANT ACADEMY")}
-              className={`px-7 h-[46px] rounded-full font-bold text-[14px] duration-300 ${
-                activeCategory === "VALORANT ACADEMY"
-                  ? "bg-[#D9B600] text-black"
-                  : "bg-neutral-200 hover:bg-[#D9B600]"
-              }`}
-            >
-              VALORANT ACADEMY
-            </button>
-
-            <button
-              onClick={() => setActiveCategory("VALORANT GC")}
-              className={`px-7 h-[46px] rounded-full font-bold text-[14px] duration-300 ${
-                activeCategory === "VALORANT GC"
-                  ? "bg-[#D9B600] text-black"
-                  : "bg-neutral-200 hover:bg-[#D9B600]"
-              }`}
-            >
-              VALORANT GC
-            </button>
-
-            <button
-              onClick={() => setActiveCategory("STAFF")}
-              className={`px-7 h-[46px] rounded-full font-bold text-[14px] duration-300 ${
-                activeCategory === "STAFF"
-                  ? "bg-[#D9B600] text-black"
-                  : "bg-neutral-200 hover:bg-[#D9B600]"
-              }`}
-            >
-              STAFF
-            </button>
-
-            <button
-              onClick={() => setActiveCategory("CREATOR")}
-              className={`px-7 h-[46px] rounded-full font-bold text-[14px] duration-300 ${
-                activeCategory === "CREATOR"
-                  ? "bg-[#D9B600] text-black"
-                  : "bg-neutral-200 hover:bg-[#D9B600]"
-              }`}
-            >
-              CREATOR
-            </button>
+            {categories.map((item) => (
+              <Link
+                key={item.slug}
+                href={item.slug ? `/members?category=${item.slug}` : "/members"}
+                className={`px-7 h-[46px] rounded-full font-bold text-[14px] duration-300 flex items-center justify-center ${
+                  (!category && item.slug === "") || category === item.slug
+                    ? "bg-[#D9B600] text-black"
+                    : "bg-neutral-200 hover:bg-[#D9B600]"
+                }`}
+              >
+                {item.label}
+              </Link>
+            ))}
           </div>
         </section>
 
         {/* MEMBER GRID */}
         <section className="max-w-[1320px] mx-auto px-4 sm:px-6 mt-20">
-          <div
-            className="
-    grid
-    grid-cols-2
-    sm:grid-cols-3
-    md:grid-cols-4
-    xl:grid-cols-5
-    gap-6
-    justify-items-center
-  "
-          >
-            {filteredMembers.map((member) => (
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 xl:grid-cols-5 gap-6 justify-items-center">
+            {data.contents.map((member: Member) => (
               <Link
-                key={member.slug}
+                key={member.id}
                 href={`/members/${member.slug}`}
                 className="flex flex-col items-center w-full max-w-[170px] group"
               >
-                <div
-                  className="
-                  relative
-                  w-full
-                  aspect-square
-                  rounded-[28px]
-                  overflow-hidden
-                  bg-neutral-100
-                "
-                >
+                <div className="relative w-full aspect-square rounded-[28px] overflow-hidden bg-neutral-100">
                   <Image
-                    src={member.image}
+                    src={member.image.url}
                     alt={member.name}
                     fill
                     className="object-cover transition duration-500 group-hover:scale-105"

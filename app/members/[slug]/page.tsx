@@ -3,7 +3,18 @@ import Link from "next/link";
 import Header from "@/app/components/Header";
 import Footer from "@/app/components/Footer";
 import Image from "next/image";
-import { members } from "@/data/members";
+import { client } from "@/app/lib/microcms";
+import type { Member } from "@/app/types/member";
+
+export async function generateStaticParams() {
+  const data = await client.get({
+    endpoint: "members",
+  });
+
+  return data.contents.map((member: Member) => ({
+    slug: member.slug,
+  }));
+}
 
 type Props = {
   params: Promise<{
@@ -14,15 +25,32 @@ type Props = {
 export default async function MemberPage({ params }: Props) {
   const { slug } = await params;
 
-  const member = members.find((m) => m.slug === slug);
+  const data = await client.get({
+    endpoint: "members",
+    queries: {
+      filters: `slug[equals]${slug}`,
+    },
+  });
+
+  const member = data.contents[0];
 
   if (!member) {
     return <div>Member not found</div>;
   }
 
-  const currentIndex = members.findIndex((m) => m.slug === slug);
+  const allMembers = await client.get({
+    endpoint: "members",
+    queries: {
+      orders: "name",
+    },
+  });
 
-  const nextMember = members[(currentIndex + 1) % members.length];
+  const currentIndex = allMembers.contents.findIndex(
+    (m: Member) => m.slug === slug,
+  );
+
+  const nextMember =
+    allMembers.contents[(currentIndex + 1) % allMembers.contents.length];
 
   return (
     <div className="bg-white min-h-screen">
@@ -36,7 +64,7 @@ export default async function MemberPage({ params }: Props) {
             <div>
               <div className="relative w-full max-w-[350px] aspect-square rounded-[32px] overflow-hidden bg-neutral-100 mx-auto">
                 <Image
-                  src={member.image}
+                  src={member.image.url}
                   alt={member.name}
                   fill
                   className="object-cover"
@@ -113,60 +141,6 @@ export default async function MemberPage({ params }: Props) {
           </p>
         </section>
 
-        {/* ACHIEVEMENTS */}
-
-        {/* ACHIEVEMENTS */}
-
-        <section className="max-w-[1320px] mx-auto px-6 mt-32">
-          <div className="flex items-end justify-between">
-            <div>
-              <h2 className="text-[42px] font-black">ACHIEVEMENTS</h2>
-
-              <div className="w-20 h-1 bg-[#D9B600] mt-3"></div>
-            </div>
-
-            {member.achievements && (
-              <p className="text-neutral-400 text-[15px] font-medium tracking-[0.2em] uppercase">
-                {member.achievements.length} ACHIEVEMENTS
-              </p>
-            )}
-          </div>
-
-          <div className="mb-10"></div>
-
-          {member.achievements && member.achievements.length > 0 ? (
-            <div className="space-y-5">
-              {member.achievements.map((achievement, index) => (
-                <div
-                  key={index}
-                  className="
-            flex
-            items-center
-            gap-6
-            rounded-[20px]
-            border
-            border-neutral-200
-            bg-white
-            px-8
-            py-6
-            transition-all
-            duration-300
-            hover:border-[#D9B600]
-            hover:-translate-y-1
-            hover:shadow-lg
-          "
-                >
-                  <div className="w-4 h-4 rounded-full bg-[#D9B600] shrink-0"></div>
-
-                  <p className="text-[20px] font-semibold">{achievement}</p>
-                </div>
-              ))}
-            </div>
-          ) : (
-            <p className="text-neutral-500">実績は現在準備中です。</p>
-          )}
-        </section>
-
         <section className="max-w-[1320px] mx-auto px-6 mt-32">
           <h2 className="text-[42px] font-black">NEXT MEMBER</h2>
 
@@ -178,7 +152,7 @@ export default async function MemberPage({ params }: Props) {
           >
             <div className="relative w-[140px] h-[140px] rounded-[20px] overflow-hidden bg-neutral-100">
               <Image
-                src={nextMember.image}
+                src={nextMember.image.url}
                 alt={nextMember.name}
                 fill
                 className="object-cover"

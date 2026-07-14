@@ -52,9 +52,7 @@ export default async function MemberPage({ params }: Props) {
     },
   });
 
-  const teamMembers = teamData.contents.filter(
-    (m: Member) => m.id !== member.id,
-  );
+  const teamMembers = teamData.contents;
 
   return (
     <div className="bg-white min-h-screen">
@@ -105,32 +103,93 @@ export default async function MemberPage({ params }: Props) {
             </div>
           </div>
         </section>
-
         <section className="max-w-[1320px] mx-auto px-6 mt-32">
           <h2 className="text-[52px] font-black">TEAM</h2>
 
           <div className="grid grid-cols-2 md:grid-cols-4 gap-10 mt-10">
             {teamMembers.map((m: Member) => (
-              <Link
-                key={m.id}
-                href={`/members/${m.slug}`}
-                className="group flex flex-col items-center"
-              >
-                <div className="relative w-[150px] aspect-square rounded-[28px] overflow-hidden bg-neutral-100">
-                  <Image
-                    src={m.image.url}
-                    alt={m.name}
-                    fill
-                    className="object-cover transition duration-300 group-hover:scale-105"
-                  />
-                </div>
+              <>
+                <Link
+                  key={m.id}
+                  href={`/members/${m.slug}`}
+                  className="group flex flex-col items-center"
+                >
+                  <div className="relative w-[150px] aspect-square rounded-[28px] overflow-hidden bg-neutral-100">
+                    <Image
+                      src={m.image.url}
+                      alt={m.name}
+                      fill
+                      className="object-cover transition duration-300 group-hover:scale-105"
+                    />
+                  </div>
 
-                <p className="mt-4 text-[18px] font-black">{m.name}</p>
+                  <p className="mt-4 text-[18px] font-black">{m.name}</p>
 
-                <p className="text-[15px] uppercase tracking-[0.15em] text-neutral-500">
-                  {m.role}
-                </p>
-              </Link>
+                  <p className="text-[15px] uppercase tracking-[0.15em] text-neutral-500">
+                    {m.role}
+                  </p>
+                </Link>
+                <Link
+                  key={m.id}
+                  href={`/members/${m.slug}`}
+                  className="group flex flex-col items-center"
+                >
+                  <div className="relative w-[150px] aspect-square rounded-[28px] overflow-hidden bg-neutral-100">
+                    <Image
+                      src={m.image.url}
+                      alt={m.name}
+                      fill
+                      className="object-cover transition duration-300 group-hover:scale-105"
+                    />
+                  </div>
+
+                  <p className="mt-4 text-[18px] font-black">{m.name}</p>
+
+                  <p className="text-[15px] uppercase tracking-[0.15em] text-neutral-500">
+                    {m.role}
+                  </p>
+                </Link>
+                <Link
+                  key={m.id}
+                  href={`/members/${m.slug}`}
+                  className="group flex flex-col items-center"
+                >
+                  <div className="relative w-[150px] aspect-square rounded-[28px] overflow-hidden bg-neutral-100">
+                    <Image
+                      src={m.image.url}
+                      alt={m.name}
+                      fill
+                      className="object-cover transition duration-300 group-hover:scale-105"
+                    />
+                  </div>
+
+                  <p className="mt-4 text-[18px] font-black">{m.name}</p>
+
+                  <p className="text-[15px] uppercase tracking-[0.15em] text-neutral-500">
+                    {m.role}
+                  </p>
+                </Link>
+                <Link
+                  key={m.id}
+                  href={`/members/${m.slug}`}
+                  className="group flex flex-col items-center"
+                >
+                  <div className="relative w-[150px] aspect-square rounded-[28px] overflow-hidden bg-neutral-100">
+                    <Image
+                      src={m.image.url}
+                      alt={m.name}
+                      fill
+                      className="object-cover transition duration-300 group-hover:scale-105"
+                    />
+                  </div>
+
+                  <p className="mt-4 text-[18px] font-black">{m.name}</p>
+
+                  <p className="text-[15px] uppercase tracking-[0.15em] text-neutral-500">
+                    {m.role}
+                  </p>
+                </Link>
+              </>
             ))}
           </div>
         </section>

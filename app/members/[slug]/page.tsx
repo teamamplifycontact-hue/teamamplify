@@ -45,12 +45,16 @@ export default async function MemberPage({ params }: Props) {
     },
   });
 
-  const currentIndex = allMembers.contents.findIndex(
-    (m: Member) => m.slug === slug,
-  );
+  const teamData = await client.get({
+    endpoint: "members",
+    queries: {
+      filters: `affiliation[equals]${member.affiliation.id}`,
+    },
+  });
 
-  const nextMember =
-    allMembers.contents[(currentIndex + 1) % allMembers.contents.length];
+  const teamMembers = teamData.contents.filter(
+    (m: Member) => m.id !== member.id,
+  );
 
   return (
     <div className="bg-white min-h-screen">
@@ -75,98 +79,60 @@ export default async function MemberPage({ params }: Props) {
             {/* RIGHT */}
 
             <div>
-              <p className="text-[#D9B600] text-[16px] font-bold uppercase tracking-[0.2em]">
-                {member.category}
+              <p className="text-[#A7A7A7] text-[13px] font-medium uppercase tracking-[0.18em]">
+                {member.role}
               </p>
 
-              <h1 className="text-[72px] font-black mt-2 leading-none">
+              <h1 className="mt-3 text-[58px] font-black leading-none uppercase">
                 {member.name}
               </h1>
 
+              <p className="mt-3 text-[15px] text-[#8B8B8B] tracking-[0.08em]">
+                {member.englishName}
+              </p>
+
               {member.birthday && (
-                <p className="mt-3 text-[14px] text-neutral-400">
+                <p className="mt-5 text-[14px] text-[#8B8B8B]">
                   {member.birthday}
                 </p>
               )}
 
-              {/* SNS */}
+              <div className="w-full h-px bg-[#D8D8D8] my-8"></div>
 
-              <div className="flex gap-5 mt-10">
-                {member.x && (
-                  <a
-                    href={member.x}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="w-14 h-14 rounded-full border border-neutral-300 flex items-center justify-center transition-all duration-300 hover:bg-[#D9B600] hover:border-[#D9B600]"
-                  >
-                    <FaXTwitter size={22} />
-                  </a>
-                )}
-
-                {member.youtube && (
-                  <a
-                    href={member.youtube}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="w-14 h-14 rounded-full border border-neutral-300 flex items-center justify-center transition-all duration-300 hover:bg-[#D9B600] hover:border-[#D9B600]"
-                  >
-                    <FaYoutube size={22} />
-                  </a>
-                )}
-
-                {member.twitch && (
-                  <a
-                    href={member.twitch}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="w-14 h-14 rounded-full border border-neutral-300 flex items-center justify-center transition-all duration-300 hover:bg-[#D9B600] hover:border-[#D9B600]"
-                  >
-                    <FaTwitch size={22} />
-                  </a>
-                )}
-              </div>
+              <p className="text-[20px] leading-[2.2] whitespace-pre-line">
+                {member.profile}
+              </p>
             </div>
           </div>
         </section>
 
-        {/* ABOUT */}
-
         <section className="max-w-[1320px] mx-auto px-6 mt-32">
-          <h2 className="text-[42px] font-black">ABOUT</h2>
+          <h2 className="text-[52px] font-black">TEAM</h2>
 
-          <div className="w-20 h-1 bg-[#D9B600] mt-3 mb-10"></div>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-10 mt-10">
+            {teamMembers.map((m: Member) => (
+              <Link
+                key={m.id}
+                href={`/members/${m.slug}`}
+                className="group flex flex-col items-center"
+              >
+                <div className="relative w-[150px] aspect-square rounded-[28px] overflow-hidden bg-neutral-100">
+                  <Image
+                    src={m.image.url}
+                    alt={m.name}
+                    fill
+                    className="object-cover transition duration-300 group-hover:scale-105"
+                  />
+                </div>
 
-          <p className="text-[18px] leading-10 text-neutral-700">
-            {member.description}
-          </p>
-        </section>
+                <p className="mt-4 text-[18px] font-black">{m.name}</p>
 
-        <section className="max-w-[1320px] mx-auto px-6 mt-32">
-          <h2 className="text-[42px] font-black">NEXT MEMBER</h2>
-
-          <div className="w-20 h-1 bg-[#D9B600] mt-3 mb-10"></div>
-
-          <Link
-            href={`/members/${nextMember.slug}`}
-            className="flex items-center gap-8 rounded-[24px] border p-8 hover:border-[#D9B600] duration-300"
-          >
-            <div className="relative w-[140px] h-[140px] rounded-[20px] overflow-hidden bg-neutral-100">
-              <Image
-                src={nextMember.image.url}
-                alt={nextMember.name}
-                fill
-                className="object-cover"
-              />
-            </div>
-
-            <div>
-              <p className="text-neutral-500">NEXT MEMBER</p>
-
-              <h3 className="text-[40px] font-black">{nextMember.name}</h3>
-
-              <p className="mt-2">{nextMember.category}</p>
-            </div>
-          </Link>
+                <p className="text-[15px] uppercase tracking-[0.15em] text-neutral-500">
+                  {m.role}
+                </p>
+              </Link>
+            ))}
+          </div>
         </section>
       </main>
 
